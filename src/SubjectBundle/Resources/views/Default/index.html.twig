@@ -1,0 +1,35 @@
+{% extends '@Subject/layout.html.twig' %}
+
+{% block body %}
+
+    <div class="intro container">
+        <div class="row>">
+            <h1>Checkpoint 2 - 14/04/2017</h1>
+            <p>Le checkpoint se découpe en deux étapes, tu peux réaliser les deux étapes distinctement les unes des autres, elles ne sont pas liées.</p>
+            <p>La partie sur Symfony / MVC / Intégration se decoupe elle aussi en plusieurs étapes, cependant réalise les bien dans l'ordre.</p>
+            <p>Même si tu ne parviens pas à réaliser la totalité de l'étape, laisse le code, il manque parfois peu de chose pour que ce soit fonctionne, et si tu as besoin, n'hesite pas à faire appel à ton formateur</p>
+            <div class="row attention line_divider">
+                <div class="col m2">
+                    <img src="{{ asset('bundles/subject/pictures/attention.png') }}" alt="attention"/>
+                </div>
+                <div class="col m8">
+                    <p>Avant toute chose, crée toi une branche sur git portant ton nom, c'est sur cette dernière que tu travailleras, une fois le travail effectué tu pousseras ton travail dessus</p>
+                </div>
+                <div class="col m2">
+                    <img src="{{ asset('bundles/subject/pictures/attention.png') }}" alt="attention"/>
+                </div>
+            </div>
+        </div>
+        <div class="row etapes">
+            <div class="col m6">
+                <h4>Algorithmique</h4>
+                <div><a class="waves-effect waves-light btn" href="{{ path('algo') }}">C'est parti</a></div>
+            </div>
+            <div class="col m6">
+                <h4>Symfony / MVC / Intégration</h4>
+                <div><a class="waves-effect waves-light btn" href="{{ path('sf3') }}">C'est parti</a></div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

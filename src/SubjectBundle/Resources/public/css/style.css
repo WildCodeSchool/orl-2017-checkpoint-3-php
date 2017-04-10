@@ -1,0 +1,144 @@
+
+/* rgb(239, 151, 33) */
+
+/* GENERAL */
+body{
+    text-align: center;;
+}
+h1, h2, h3{
+    color: rgb(239, 151, 33);
+    text-align: center;
+}
+.marge{
+    margin-left: 60px;
+}
+.marge_double{
+    margin-left: 120px;
+}
+.line_divider{
+    border-top: solid 1px rgb(239, 151, 33);
+    border-bottom: solid 1px rgb(239, 151, 33);
+}
+.line_divider_top{
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: solid 1px rgb(239, 151, 33);
+}
+.commande_style{
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+/* NAV BAR */
+nav{
+    background-color: black !important;
+}
+nav ul{
+    width: auto !important;
+}
+nav ul li a, .dropdown-content{
+    color: rgb(239, 151, 33) !important;
+}
+.nav_right{
+    margin-right: 15px;
+}
+.nav_right li{
+    color: rgb(239, 151, 33) !important;
+}
+.nav_right li span{
+    color: white !important;
+}
+.dropdown-content li:first-child a{
+    color: black !important;
+}
+.dropdown-button{
+    font-size: 30px !important;
+}
+.nav_bar_logo{
+    height: 100%;
+}
+.nav_bar_logo img{
+    height:100%;
+}
+.ennonce{
+    text-align: left;
+}
+/* TEXT INTRO */
+.attention{
+    margin-top: 50px;
+}
+.attention p{
+    font-size: 19px;
+}
+.attention img{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.intro span{
+    color: red;
+    font-weight: bold;
+    font-size: large;
+}
+
+/* BOUTON */
+.btn{
+    background-color: rgb(239, 151, 33) !important;
+}
+.button_homepage{
+    border-top: solid 1px rgb(239, 151, 33);
+    border-bottom: solid 1px rgb(239, 151, 33);
+}
+.button_homepage a{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* ETAPE */
+.etapes{
+    margin-top: 70px;
+}
+.etapes h4{
+    margin-bottom: 30px;
+}
+.etapes p{
+    margin-bottom: 50px;
+}
+.etapes .col:nth-child(2){
+    border-left: solid 1px rgb(239, 151, 33);
+}
+
+/* ALGO */
+.algo_tab{
+    margin-bottom: 50px;
+}
+.algo .false{
+    background-color: red !important;
+}
+.algo .true{
+    background-color: green !important;
+}
+.algo .exo{
+    border: solid 1px rgb(239, 151, 33);
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.algo .exemples{
+    text-align: left !important;
+    margin: 0 50px;
+    padding: 20px 0;
+}
+
+/* SF3 */
+.sf3 .instruction{
+    margin: 30px;
+    padding: 30px 30px 30px 30px;
+    border-top: solid 1px rgb(239, 151, 33);
+}
+
+
+/* FOOTER */
+footer{
+    margin-top: 100px !important;
+    background-color: black !important;
+}

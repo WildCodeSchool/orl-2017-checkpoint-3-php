@@ -1,0 +1,5 @@
+subject:
+    resource: "@SubjectBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

@@ -6,8 +6,11 @@ Checkpoint 2 - PHP
 #### Récupération du projet
 ```
 git clone adresse_du_depot
+```
 #### On se déplace dans le dossier du projet
-
+```
+cd name_folder
+```
 #### Installation du projet
 ```
 composer install

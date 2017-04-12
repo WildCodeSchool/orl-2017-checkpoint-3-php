@@ -43,14 +43,14 @@
                 <li>
                     Exécute ensuite la commande suivante:
                     <p><span class="commande_style">php bin/console doctrine:fixtures:load</span></p>
-                    <p>A la question te demandant si tu veux oui ou non effacer ta base de donnée, répond yes@</p>
+                    <p>A la question te demandant si tu veux oui ou non effacer ta base de données, réponds yes</p>
                 </li>
             </ol>
             <h2>ETAPE 3: Créer un mini livre</h2>
-            <p>Grace aux fixtures, tu as peuplé ta base de donnée, tu peux le vérifier facilement via mysql en cli, ou via phpmyadmin</p>
-            <p>Comme tu as du le comprendre, une card est représentée par un lien vers une image, ainsi que le numéro de la page, et le tout forme une story.</p>
-            <p>L'exercice conciste maintenant à afficher tout ça sous forme de mini livre</p>
-            <p>On devra avoir quelque chose comme ci dessous</p>
+            <p>Grace aux fixtures, tu as peuplé ta base de données, tu peux le vérifier facilement via mysql en cli, ou via phpmyadmin</p>
+            <p>Comme tu as dû le comprendre, une card est représentée par un lien vers une image, ainsi que le numéro de la page, et le tout forme une story.</p>
+            <p>L'exercice consiste maintenant à afficher tout ça sous forme de mini livre</p>
+            <p>On devra avoir quelque chose comme ci-dessous</p>
             <img src="{{ asset('bundles/subject/pictures/wireframe.png') }}" alt="wireframe" width="50%">
             <p>La flèche de droite affiche la card suivante, et celle de gauche la card précédente</p>
             <div class="row attention line_divider">
@@ -58,24 +58,24 @@
                     <img src="{{ asset('bundles/subject/pictures/attention.png') }}" alt="attention"/>
                 </div>
                 <div class="col m8">
-                    <p>Attention, on n'attend pas de toi un slider, au clique sur la flèche, la page doit se recharger et afficher la suite de l'histoire</p>
+                    <p>Attention, on n'attend pas de toi un slider. Au clique sur la flèche, la page doit se recharger et afficher la suite de l'histoire</p>
                 </div>
                 <div class="col m2">
                     <img src="{{ asset('bundles/subject/pictures/attention.png') }}" alt="attention"/>
                 </div>
             </div>
-            <p>Pour le design, fait comme tu le sens, ça doit juste est "jolie" (si tu as du temps, met un petit footer, barre de nav...), mais peut importe si on a par exemple des boutons à la place des flèches ;-)</p>
+            <p>Pour le design, fais comme tu le sens, ça doit juste être "joli" (si tu as du temps, met un petit footer, barre de nav...), mais peut importe si on a par exemple des boutons à la place des flèches ;-)</p>
             <h2>ETAPE 4: Bonus</h2>
             <ol>
                 <li>Tout se trouve dans une seule et même méthode au sein de ton controler</li>
                 <li>Les boutons suivant et précédent s'affichent uniquement si il y a une autre page à consulter</li>
-                <li>Ajoute une méthode permettant de référencer de nouvelles histoires, on devra pouvoir selectionner une histoire et afficher ces différentes card toujours de la même façon</li>
+                <li>Ajoute une méthode permettant de référencer de nouvelles histoires, on devra pouvoir selectionner une histoire et afficher ces différentes cards toujours de la même façon</li>
             </ol>
         </div>
         <div class="row line_divider">
             <p>Tu es libre d'utiliser le/les frameworks css/js de ton choix, aucune librairie n'est chargée</p>
-            <p>Tu peux également utiliser le fichier base.html.twig si tu en as besoin (fortement recommender d'ailleur), tout le reste doit se trouver dans ton bundle</p>
-            <p>L'interface que tu vas créer devra être consultable par via le path "/story"</p>
+            <p>Tu peux également utiliser le fichier base.html.twig si tu en as besoin (fortement recommendé d'ailleur), tout le reste doit se trouver dans ton bundle</p>
+            <p>L'interface que tu vas créer devra être consultable via le path "/story"</p>
             <p>Pour la suite je te laisse faire !</p>
             <p>Bon courage</p>
         </div>

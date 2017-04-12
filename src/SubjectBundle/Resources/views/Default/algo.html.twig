@@ -1,0 +1,41 @@
+{% extends '@Subject/layout.html.twig' %}
+
+{% block body %}
+
+    <div class="algo container">
+        <div class="row">
+            <h1>Algorithmique</h1>
+            <p>Bienvenu sur le test d'algorithmique</p>
+            <p>Ci-dessous deux sujets d'algo</p>
+            <p>Ouvre le projet avec PHP Storm et rend toi dans le controlleur "AlgoController", c'est ici que tu devras travailler.</p>
+            <p>Tu n'as normalement rien à modifier dans les autres fichiers pour cette étape</p>
+            <p>Si ton algo est bon, les tests passent au vert.</p>
+            <p>Bon courage</p>
+        </div>
+        <div class="row">
+            <div class="row exo">
+                <div class="row ennoncé">
+                    <div class="row">
+                        <h2>Enoncé</h2>
+                        <h5>Objectif : trier les mots d'une phrase du plus court au plus long ou l'inverse.</h5>
+                        <p>En entrée : un phrase et un indicateur du sens de tri :</p>
+                        <ul>
+                            <li>ASC : du plus petit au plus long</li>
+                            <li>DESC : du plus long au plus petit</li>
+                        </ul>
+                        <p>Exemple :</p>
+                        <ul>
+                            <li>"il fait chaud", "ASC" => "il fait chaud"</li>
+                            <li>"il fait chaud", "DESC" => "chaud fait il"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h5>Lancer les tests:</h5>
+            <p>Dans le dossier de votre projet, via le terminal, exécuter la commande <span class="commande_style">phpunit tests/SubjectBundle/Controller/AlgoControllerTest.php</span></p>
+        </div>
+    </div>
+
+{% endblock %}

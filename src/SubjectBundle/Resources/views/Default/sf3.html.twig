@@ -13,12 +13,12 @@
             </div>
         </div>
         <div class="instruction left-align row">
-            <h2>ETAPE 1: Bundle & Entitié</h2>
+            <h2>ETAPE 1: Bundle & Entité</h2>
             <ol>
-                <li>Créer une base de donnée nommée "commitstrip"</li>
+                <li>Créer une base de données nommée "commitstrip"</li>
                 <li>Créer un bundle CommitStripBundle</li>
                 <li>
-                    Créer une entitée nommée "Card" à l'intérieur de ton bundle avec:
+                    Créer une entité nommée "Card" à l'intérieur de ton bundle avec:
                     <ol>
                         <li>Un champ "picture" de type string</li>
                         <li>Un champ "nbcard" de type int</li>
@@ -30,18 +30,18 @@
                     <img src="{{ asset('bundles/subject/pictures/attention.png') }}" alt="attention"/>
                 </div>
                 <div class="col m8">
-                    <p>Les noms des champs, du bundle, et de l'entitée ont une importance, respecte les</p>
+                    <p>Les noms des champs du bundle et de l'entité ont une importance, respecte les</p>
                 </div>
                 <div class="col m2">
                     <img src="{{ asset('bundles/subject/pictures/attention.png') }}" alt="attention"/>
                 </div>
             </div>
             <h2>ETAPE 2: Charger les fixtures</h2>
-            <p>Les fixtures vont de permettre de peupler ta base de donnée, tu les véra bientot via un cours/atelier.</p>
+            <p>Les fixtures vont te permettre de peupler ta base de données, tu les verras bientôt via un cours/atelier.</p>
             <ol>
-                <li>Rend toi dans le fichier /src/SubjectBundle/DataFixtures/ORM/LoadStoryData.php et décommente de code</li>
+                <li>Rends toi dans le fichier /src/SubjectBundle/DataFixtures/ORM/LoadStoryData.php et décommente le code</li>
                 <li>
-                    Execute ensuite la commande suivante:
+                    Exécute ensuite la commande suivante:
                     <p><span class="commande_style">php bin/console doctrine:fixtures:load</span></p>
                     <p>A la question te demandant si tu veux oui ou non effacer ta base de donnée, répond yes@</p>
                 </li>

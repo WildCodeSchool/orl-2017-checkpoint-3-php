@@ -3,10 +3,8 @@
 namespace tests\SubjectBundle\Controller;
 
 use SubjectBundle\Controller\AlgoController;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-
-class AlgoControllerTest extends WebTestCase
+class AlgoControllerTest extends \PHPUnit\Framework\TestCase
 {
     private $controller;
 

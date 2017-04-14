@@ -1,3 +1,8 @@
+commit_strip:
+    resource: "@CommitStripBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 subject:
     resource: "@SubjectBundle/Controller/"
     type:     annotation

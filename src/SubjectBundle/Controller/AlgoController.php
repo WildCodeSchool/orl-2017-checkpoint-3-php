@@ -12,6 +12,17 @@ class AlgoController extends Controller
     //
     public function strlenOrder($string, $order)
     {
+        $words = explode (' ', $string);
+        foreach ($words as $word) {
+            $length = strlen($word);
+            $tabLength [$length] = $word;
 
+        }
+        if ($order == 'ASC') {
+            ksort($tabLength);
+        } elseif ($order=='DESC') {
+            krsort($tabLength);
+        }
+        return implode (' ', $tabLength);
     }
 }

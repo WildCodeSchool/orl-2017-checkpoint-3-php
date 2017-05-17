@@ -10,8 +10,9 @@ class AlgoController extends Controller
     // Complète la fonction suivante //
     //////////////////////////////////////
     //
-    public function strlenOrder()
-    {
+
+    public function dateInterval ($series) {
 
     }
+
 }

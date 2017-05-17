@@ -10,7 +10,7 @@ class AlgoControllerTest extends \PHPUnit\Framework\TestCase
 
     public function __construct()
     {
-        $this->controller = new AlgoController();
+        $this->controller = new AlgoController(4,3);
     }
 
     public function testInit()
@@ -19,26 +19,32 @@ class AlgoControllerTest extends \PHPUnit\Framework\TestCase
     }
 
     public function test1() {
-        $this->assertEquals ("il fait chaud", $this->controller->strlenOrder("il fait chaud", "ASC"));
+        $series = [
+            2005=>'How I met your mother',
+            1985=>'MacGyver',
+            1994=>'Friends',
+            1997=>'Buffy',
+            2011=>'Game of thrones',
+            1978=>'Dallas',
+        ];
+        $this->assertEquals (9, $this->controller->dateInterval($series));
     }
 
     public function test2() {
-        $this->assertEquals ("chaud fait il", $this->controller->strlenOrder("il fait chaud", "DESC"));
+        $series = [
+            2005=>'How I met your mother',
+            2008=>'Breaking bad',
+            2005=>'Prison Break',
+        ];
+        $this->assertEquals (3, $this->controller->dateInterval($series));
     }
 
     public function test3() {
-        $this->assertEquals ("il est fort super", $this->controller->strlenOrder("il est super fort", "ASC"));
+        $series = [
+            1978=>'Dallas',
+            2010=>'Sherlock',
+        ];
+        $this->assertEquals (32, $this->controller->dateInterval($series));
     }
 
-    public function test4() {
-        $this->assertEquals ("super fort est il", $this->controller->strlenOrder("il est super fort", "DESC"));
-    }
-
-    public function test5() {
-        $this->assertEquals ("un coûte combien portable ordinateur", $this->controller->strlenOrder("combien coûte un ordinateur portable", "ASC"));
-    }
-
-    public function test6() {
-        $this->assertEquals ("ordinateur portable combien coûte un", $this->controller->strlenOrder("combien coûte un ordinateur portable", "DESC"));
-    }
 }

@@ -16,14 +16,33 @@
                 <div class="row ennoncé">
                     <div class="row">
                         <h2>Enoncé</h2>
-                        <h5>Objectif : créer une liste de suggestions de série TV.</h5>
-                        <p>En entrée : le nom d'une série TV, et un tableau contenant une grande liste de séries :</p>
-                        <p>En sortie: </p>
+                        <h5>Objectif : déterminer le plus grand écart de date entre 2 séries de votre DVDthèque.</h5>
+                        <p>En entrée :
+                            <ul>
+                            <li>Un tableau contenant des années (en clé) et des noms de série en valeur. Le tableau n'est pas trié.</li>
+                        </p>
+                        <p>En sortie: <br/>
+                            Un entier, réprésentant le plus grand écart de date entre deux séries.
+                        </p>
 
                         <p>Exemple :</p>
                         <ul>
-                            <li>"Friends" => ["How I met your mother", "Big Bang Theory", "Will & Grace"]</li>
-                            <li>"", "DESC" => "chaud fait il"</li>
+                            <p class="">
+                                $series = [
+                                    2005=>'How I met your mother',
+                                    1985=>'MacGyver',
+                                    1994=>'Friends',
+                                    1997=>'Buffy',
+                                    2011=>'Game of thrones',
+                                    1978=>'Dallas',
+                                ];
+                            </p>
+                            Le plus grand écart est de 14 ans entre Mc Giver et Friends;
+                        </ul>
+
+                        <p>Remarque</p>
+                        <ul>
+                            <li>Il n'y a pas plus d'une série par année dans le tableau en paramètre</li>
                         </ul>
                     </div>
                 </div>

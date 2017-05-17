@@ -5,79 +5,77 @@
         <div class="row ennonce">
             <h1>Symfony / MVC / Intégration</h1>
             <div class="row center-align line_divider">
-                <img src="{{ asset('bundles/subject/pictures/commitstrip.png') }}" alt="commitstrip">
+                <img src="{{ asset('bundles/subject/pictures/Tvshow.jpeg') }}" alt="serieTv">
             </div>
             <div class="row">
                 <h2>Enoncé</h2>
-                <p>Réaliser un mini livre en ligne</p>
+                <p>Réaliser un gestionnaire simple de série Tv</p>
+                <p>Le but est de pouvoir lister des série Tv et les épisodes qui y sont associés pour les noter</p>
             </div>
         </div>
         <div class="instruction left-align row">
             <h2>ETAPE 1: Bundle & Entité</h2>
             <ol>
-                <li>Créer une base de données nommée "commitstrip"</li>
-                <li>Créer un bundle CommitStripBundle</li>
+                <li>Créer une base de données nommée "tvshow"</li>
+                <li>Créer un bundle TvShowManagerBundle</li>
                 <li>
-                    Créer une entité nommée "Card" à l'intérieur de ton bundle avec:
+                    Créer une entité nommée "TvShow" à l'intérieur de ton bundle avec:
                     <ol>
-                        <li>Un champ "picture" de type string</li>
-                        <li>Un champ "nbcard" de type int</li>
+                        <li>Un champ "name" de type string, correspondant au nom de la série</li>
+                        <li>Un champ "type" de type string, correspondant au genre de série (comédie, drame, science-fiction...)</li>
+                        <li>Un champ "url" de type string, contenant un lien vers une image illustrant la série</li>
+                        <li>Un champ "year" de type date, correspondant à la date de création de la série</li>
+                    </ol>
+                </li>
+                <li>
+                    Créer une entité nommée "Episode"  avec:
+                    <ol>
+                        <li>Un champ "name" de type string, correspondant au nom de l'episode</li>
+                        <li>Un champ "season" de type int, correspondant au numéro de saison de l'épisode</li>
+                        <li>Un champ "number" de type int, correspondant au numéro de l'épisode dans la saison</li>
+                        <li>Un champ "note" de type int, correspondant à la note moyenne (de 1 à 5) donné à cet épisode</li>
+                        <li>Un champ "tvShow" reliant la table Episode à la table Show</li>
                     </ol>
                 </li>
             </ol>
+
             <div class="row attention line_divider">
-                <div class="col m2">
+                <div class="col m1">
                     <img src="{{ asset('bundles/subject/pictures/attention.png') }}" alt="attention"/>
                 </div>
-                <div class="col m8">
+                <div class="col m10">
                     <p>Les noms des champs du bundle et de l'entité ont une importance, respecte les</p>
                 </div>
-                <div class="col m2">
+                <div class="col m1">
                     <img src="{{ asset('bundles/subject/pictures/attention.png') }}" alt="attention"/>
                 </div>
             </div>
             <h2>ETAPE 2: Charger les fixtures</h2>
-            <p>Les fixtures vont te permettre de peupler ta base de données, tu les verras bientôt via un cours/atelier.</p>
+            <p>Les fixtures vont te permettre de peupler ta base de données.</p>
             <ol>
-                <li>Rends toi dans le fichier /src/SubjectBundle/DataFixtures/ORM/LoadStoryData.php et décommente le code</li>
+                <li>Rends toi dans le fichier /src/SubjectBundle/DataFixtures/ORM/LoadData.php et décommente le code</li>
                 <li>
                     Exécute ensuite la commande suivante:
                     <p><span class="commande_style">php bin/console doctrine:fixtures:load</span></p>
                     <p>A la question te demandant si tu veux oui ou non effacer ta base de données, réponds yes</p>
                 </li>
             </ol>
-            <h2>ETAPE 3: Créer un mini livre</h2>
-            <p>Grace aux fixtures, tu as peuplé ta base de données, tu peux le vérifier facilement via mysql en cli, ou via phpmyadmin</p>
-            <p>Comme tu as dû le comprendre, une card est représentée par un lien vers une image, ainsi que le numéro de la page, et le tout forme une story.</p>
-            <p>L'exercice consiste maintenant à afficher tout ça sous forme de mini livre</p>
-            <p>On devra avoir quelque chose comme ci-dessous</p>
-            <img src="{{ asset('bundles/subject/pictures/wireframe.png') }}" alt="wireframe" width="50%">
-            <p>La flèche de droite affiche la card suivante, et celle de gauche la card précédente</p>
-            <div class="row attention line_divider">
-                <div class="col m2">
-                    <img src="{{ asset('bundles/subject/pictures/attention.png') }}" alt="attention"/>
-                </div>
-                <div class="col m8">
-                    <p>Attention, on n'attend pas de toi un slider. Au clique sur la flèche, la page doit se recharger et afficher la suite de l'histoire</p>
-                </div>
-                <div class="col m2">
-                    <img src="{{ asset('bundles/subject/pictures/attention.png') }}" alt="attention"/>
-                </div>
-            </div>
-            <p>Pour le design, fais comme tu le sens, ça doit juste être "joli" (si tu as du temps, met un petit footer, barre de nav...), mais peut importe si on a par exemple des boutons à la place des flèches ;-)</p>
+            <p>Tu peux vérifier facilement que la base est peuplée via mysql en cli, ou via phpmyadmin</p>
+            <h2>ETAPE 3: Créer un CRUD</h2>
+            <p>Ce CRUD doit permettre de lister, modifier, ajouter, supprimer une série (accessible par la route /tvshow) et des épisodes (/episode)</p>
+            <p>Le but de ce checkpoint est de vérifier que tu as bien compris ce qu'est un CRUD et comment le générer, nous t'invitons donc à ne pas utiliser la ligne de commande</p>
             <h2>ETAPE 4: Bonus</h2>
             <ol>
-                <li>Tout se trouve dans une seule et même méthode au sein de ton controler</li>
-                <li>Les boutons suivant et précédent s'affichent uniquement si il y a une autre page à consulter</li>
-                <li>Ajoute une méthode permettant de référencer de nouvelles histoires, on devra pouvoir selectionner une histoire et afficher ces différentes cards toujours de la même façon</li>
+                <li>Crée une page /note listant toutes les séries, par ordre de note, la note de la série étant la moyenne des notes de ses épisodes
+                {#<li>Crée une page /suggestion/{id} (id étant un id de Tvshow) permettant, pour une série donnée, d'afficher les suggestions,#}
+                    {#en réutilisant l'algorithme réalisé dans la première partie du checkpoint, les paramètres d'entrée étant l'id et un tableau reprenant toutes les séries</li>#}
             </ol>
         </div>
         <div class="row line_divider">
             <p>Tu es libre d'utiliser le/les frameworks css/js de ton choix, aucune librairie n'est chargée</p>
-            <p>Tu peux également utiliser le fichier base.html.twig si tu en as besoin (fortement recommendé d'ailleur), tout le reste doit se trouver dans ton bundle</p>
-            <p>L'interface que tu vas créer devra être consultable via le path "/story"</p>
-            <p>Pour la suite je te laisse faire !</p>
-            <p>Bon courage</p>
+            <p>Pour le design, fais comme tu le sens, ça doit juste être "joli" (si tu as du temps, met un petit footer, barre de nav...) ;-)</p>
+            <p>Utilise le fichier base.html.twig si tu en as besoin, tout le reste doit se trouver dans ton bundle</p>
+            <p>Bon courage !</p>
         </div>
         <div class="row">
             <div class="col m12 button_homepage">

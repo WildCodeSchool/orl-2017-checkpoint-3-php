@@ -1,7 +1,9 @@
-commit_strip:
-    resource: "@CommitStripBundle/Controller/"
+tv_show_manager:
+    resource: "@TVShowManagerBundle/Controller/"
     type:     annotation
     prefix:   /
+
+
 
 subject:
     resource: "@SubjectBundle/Controller/"

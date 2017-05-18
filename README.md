@@ -1,15 +1,15 @@
-Checkpoint 2 - PHP
+Checkpoint 3 - PHP
 ==========
 
 ## Procédure d'installation - Symfony
 
 #### Récupération du projet
 ```
-git clone adresse_du_depot
+git clone https://github.com/WildCodeSchool/2017-checkpoint-3-php
 ```
 #### On se déplace dans le dossier du projet
 ```
-cd name_folder
+cd 2017-checkpoint-3-php
 ```
 #### Installation du projet
 ```
@@ -19,3 +19,4 @@ composer install
 ```
 php bin/console assets:install
 ```
+

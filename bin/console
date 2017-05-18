@@ -25,4 +25,10 @@ if ($debug) {
 
 $kernel = new AppKernel($env, $debug);
 $application = new Application($kernel);
+
+if('doctrine:generate:crud' == $input->getFirstArgument() ||
+    'generate:doctrine:crud' == $input->getFirstArgument()) {
+    die('On a dit pas de CRUD !!!'."\n");
+}
+
 $application->run($input);

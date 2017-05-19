@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tvshow</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tvShow.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ tvShow.name }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ tvShow.type }}</td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>{{ tvShow.url }}</td>
+            </tr>
+            <tr>
+                <th>Year</th>
+                <td>{{ tvShow.year }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tvshow_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('tvshow_edit', { 'id': tvShow.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

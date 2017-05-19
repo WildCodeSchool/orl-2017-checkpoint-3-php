@@ -1,5 +1,15 @@
+tv_show_manager:
+    resource: "@TvShowManagerBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 subject:
     resource: "@SubjectBundle/Controller/"
     type:     annotation
     prefix:   /
 
+# app/config/routing.yml
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /episode

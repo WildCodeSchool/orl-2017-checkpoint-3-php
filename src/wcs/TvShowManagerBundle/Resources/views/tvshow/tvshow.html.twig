@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{%  block title %}TvShow{% endblock %}
+{% block body %}
+<h1 class="text-center">TVShowList</h1>
+    {% if msg is defined %}
+        <div class="container-fluid">
+            <div class="row">
+                <h1>{{ msg }}</h1>
+            </div>
+        </div>
+        {% endif %}
+<div class="container-fluid">
+    <div class="row">
+    {% for serie in series %}
+            <div class="col-lg-4">
+                <h3>Name: {{ serie.name }} - {{ serie.year }}</h3>
+                <h4>Type: {{ serie.type }}</h4>
+                <img src="{{ serie.url }}" alt="image_serie" width="200" height="100">
+                <br />
+                <a href="tvshow/edit/?id={{ serie.id }}"><button class="btn-danger">Edit</button></a>
+                <a href="tvshow/delete/?id={{ serie.id }}"><button class="btn-primary">Delete</button></a>
+            </div>
+        {% if loop.index%3 == 0 %}
+             </div><div class="row">
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

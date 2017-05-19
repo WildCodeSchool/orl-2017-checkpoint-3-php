@@ -6,27 +6,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AlgoController extends Controller
 {
-    //////////////////////////////////////
-    // Complète la fonction suivante //
-    //////////////////////////////////////
-    //
-
-    public function dateInterval ($series) {
+    public function dateInterval ($series)
+    {
         ksort($series);
         $dates = array_flip($series);
         $dateInterval = 0;
-        foreach ($dates as $date){
+        foreach ($dates as $date) {
             $nextDate = next($dates);
-            if($nextDate!=NULL) {
+            if ($nextDate != NULL) {
                 $difference = abs($date - $nextDate);
-            }else{
+            } else {
                 $difference = 0;
             }
-            if($difference>$dateInterval){
+            if ($difference > $dateInterval) {
                 $dateInterval = $difference;
             }
         }
         return $dateInterval;
     }
-
 }

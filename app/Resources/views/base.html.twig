@@ -10,6 +10,20 @@
 
     </head>
     <body>
+    <nav class="navbar navbar-inverse">
+
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="/tvshow">Tv Show</a>
+            </li>
+            <li>
+                <a href="/episode">Episode</a>
+            </li>
+            <li>
+                <a href="/note">Note</a>
+            </li>
+        </ul>
+    </nav>
         {% block body %}{% endblock %}
         {% block javascripts %}
             <script src="{{ asset('js/jquery.js') }}"></script>
@@ -17,3 +31,5 @@
         {% endblock %}
     </body>
 </html>
+
+

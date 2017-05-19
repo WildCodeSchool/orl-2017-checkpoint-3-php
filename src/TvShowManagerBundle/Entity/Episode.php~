@@ -1,0 +1,61 @@
+<?php
+
+namespace TvShowManagerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use TvShowManagerBundle\Entity\TvShow;
+
+/**
+ * Episode
+ *
+ * @ORM\Table(name="episode")
+ * @ORM\Entity(repositoryClass="TvShowManagerBundle\Repository\EpisodeRepository")
+ */
+class Episode
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="season", type="integer")
+     */
+    private $season;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="number", type="integer")
+     */
+    private $number;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="note", type="integer")
+     */
+    private $note;
+
+    /**
+     * @var string
+     * @ORM\ManyToOne(targetEntity="TvShow")
+     */
+    private $tvShow;
+
+
+
+}

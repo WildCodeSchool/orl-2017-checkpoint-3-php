@@ -11,8 +11,19 @@ class AlgoController extends Controller
     //////////////////////////////////////
     //
 
-    public function dateInterval ($series) {
-
+    public function dateInterval ($series)
+    {
+        $tab = krsort($series);
+        $ecart = '';
+        $i= 1;
+            foreach($tab as $key=>$value){
+                if($i!=1){
+                    $ecart[]=$key[$i-1]- $key [$i];
+                }else{
+                    $i++;
+                }
+                $i++;
+            }
+        return max($ecart[]);
     }
-
 }

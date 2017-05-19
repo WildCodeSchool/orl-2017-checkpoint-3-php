@@ -4,6 +4,7 @@ qr_tv_show_manager_homepage:
 qr_tv_show_manager_note:
     path:     /note
     defaults: { _controller: QRTvShowManagerBundle:Note:read }
+
 qr_tv_show_manager_tvShow_read:
     path:     /tvShow
     defaults: { _controller: QRTvShowManagerBundle:TvShow:read }
@@ -24,6 +25,7 @@ qr_tv_show_manager_tvShow_delete:
         id:      1
     requirements:
         id:   \d+
+
 qr_tv_show_manager_episode_read:
     path:     /episode/{id}
     defaults:

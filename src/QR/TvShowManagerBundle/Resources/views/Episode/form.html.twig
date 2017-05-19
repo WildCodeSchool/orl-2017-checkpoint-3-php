@@ -24,8 +24,10 @@
             {{ form_widget(form.note, {'attr': {'placeholder': 'Type the note of the Episode'}}) }}
             {{ form_errors(form.note) }}
 
-            {{ form_label(form.submit) }}
-            {{ form_widget(form.submit) }}
+            <div class="center">
+                {{ form_label(form.submit) }}
+                {{ form_widget(form.submit, {'attr': {'class': 'btn blue'}}) }}
+            </div>
 
             {{ form_end(form) }}
         </div>

@@ -44,6 +44,10 @@ class TvShowController extends Controller
     public function deleteAction(TvShow $tvShow)
     {
         $em = $this->getDoctrine()->getManager();
+        foreach ($tvShow->getEpisodes() as $episode){
+            $em->remove($episode);
+            $em->flush();
+        }
         $em->remove($tvShow);
         $em->flush();
         return $this->redirectToRoute('qr_tv_show_manager_tvShow_read');

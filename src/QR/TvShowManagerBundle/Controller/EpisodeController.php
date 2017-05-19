@@ -22,7 +22,7 @@ class EpisodeController extends Controller
             $data->setTvShow($tvShow);
             $em->persist($data);
             $em->flush();
-            return $this->redirectToRoute('qr_tv_show_manager_tvShow_read');
+            return $this->redirectToRoute('qr_tv_show_manager_episode_read', array('id' => $tvShow->getId()));
         }
 
         return $this->render('QRTvShowManagerBundle:Episode:form.html.twig', ['form' => $form->createView()]);
@@ -34,7 +34,7 @@ class EpisodeController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em->flush();
-            return $this->redirectToRoute('qr_tv_show_manager_tvShow_read');
+            return $this->redirectToRoute('qr_tv_show_manager_episode_read', array('id' => $episode->getTvShow()->getId()));
         }
 
         return $this->render('QRTvShowManagerBundle:Episode:form.html.twig', ['form' => $form->createView()]);
@@ -44,7 +44,7 @@ class EpisodeController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->remove($episode);
         $em->flush();
-        return $this->redirectToRoute('qr_tv_show_manager_tvShow_read');
+        return $this->redirectToRoute('qr_tv_show_manager_episode_read', array('id' => $episode->getTvShow()->getId()));
     }
     public function readAction(TvShow $tvShow)
     {

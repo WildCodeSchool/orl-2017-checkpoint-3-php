@@ -1,12 +1,13 @@
 {% extends "::base.html.twig" %}
-{% block title %}Tv Shows{% endblock %}
+{% block title %}{{ tvShow.name }}{% endblock %}
 {% block body %}
-    {% include 'QRTvShowManagerBundle:TvShow:navigation.html.twig' %}
+    {% include 'QRTvShowManagerBundle::navigation.html.twig' %}
     <div class="container">
         <div class="row">
             <div class="center">
+                <h1>{{ tvShow.name }}</h1>
                 <br />
-                <a href="{{ path('qr_tv_show_manager_tvShow_add') }}" class="btn blue">Add a Tv Show</a>
+                <a href="{{ path('qr_tv_show_manager_episode_add') }}/{{ tvShow.id }}" class="btn blue">Add an Episode</a>
             </div>
             <br />
             <table class="bordered centered highlight responsive-table">
@@ -14,24 +15,24 @@
                 <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Type</th>
-                    <th>Url</th>
-                    <th>Year</th>
+                    <th>Season</th>
+                    <th>Number</th>
+                    <th>Note</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for tvShow in tvShows %}
+                {% for episode in episodes %}
                     <a href="{{ path('qr_tv_show_manager_episode_read') }}/{{ tvShow.id }}">
                         <tr>
-                            <td>{{ tvShow.id }}</td>
-                            <td>{{ tvShow.name }}</td>
-                            <td>{{ tvShow.type }}</td>
-                            <td><img src="{{ tvShow.url }}" width="50px" height="50px"></td>
-                            <td>{{ tvShow.year }}</td>
+                            <td>{{ episode.id }}</td>
+                            <td>{{ episode.name }}</td>
+                            <td>{{ episode.season }}</td>
+                            <td>{{ episode.number }}</td>
+                            <td>{{ episode.note }}</td>
                             <td>
-                                <a href="{{ path('qr_tv_show_manager_tvShow_update') }}/{{ tvShow.id }}" class="btn orange"><i class="fa fa-pencil"></i></a>
-                                <a href="{{ path('qr_tv_show_manager_tvShow_delete') }}/{{ tvShow.id }}" class="btn red"><i class="fa fa-trash-o"></i></a>
+                                <a href="{{ path('qr_tv_show_manager_episode_update') }}/{{ episode.id }}" class="btn orange"><i class="fa fa-pencil"></i></a>
+                                <a href="{{ path('qr_tv_show_manager_episode_delete') }}/{{ episode.id }}" class="btn red"><i class="fa fa-trash-o"></i></a>
                             </td>
                         </tr>
                     </a>

@@ -1,0 +1,28 @@
+{% extends "::base.html.twig" %}
+{% block title %}Notes{% endblock %}
+{% block body %}
+    {% include 'QRTvShowManagerBundle::navigation.html.twig' %}
+    <div class="container">
+        <div class="row">
+            <br />
+            <table class="bordered centered striped responsive-table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Note</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for tvShow in tvShows %}
+                    <tr>
+                        <td>{{ tvShow.id }}</td>
+                        <td>{{ tvShow.name }}</td>
+                        <td>{{ tvShow.note }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock body %}

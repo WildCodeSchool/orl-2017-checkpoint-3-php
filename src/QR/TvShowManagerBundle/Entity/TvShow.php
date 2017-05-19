@@ -50,7 +50,7 @@ class TvShow
     private $year;
 
     /**
-     * @ORM\OneToMany(targetEntity="Episode", mappedBy="tvShow")
+     * @ORM\OneToMany(targetEntity="Episode", mappedBy="tvShow", fetch="EAGER")
      */
     private $episodes;
 

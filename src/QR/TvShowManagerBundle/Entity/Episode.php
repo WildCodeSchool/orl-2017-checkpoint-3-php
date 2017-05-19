@@ -50,7 +50,7 @@ class Episode
     private $note;
 
     /**
-     * @ORM\ManyToOne(targetEntity="TvShow", inversedBy="episodes")
+     * @ORM\ManyToOne(targetEntity="TvShow", inversedBy="episodes", fetch="EAGER")
      */
     private $tvShow;
 

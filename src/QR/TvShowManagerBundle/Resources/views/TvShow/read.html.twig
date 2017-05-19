@@ -1,7 +1,7 @@
 {% extends "::base.html.twig" %}
 {% block title %}Tv Shows{% endblock %}
 {% block body %}
-    {% include 'QRTvShowManagerBundle:TvShow:navigation.html.twig' %}
+    {% include 'QRTvShowManagerBundle::navigation.html.twig' %}
     <div class="container">
         <div class="row">
             <div class="center">
@@ -9,7 +9,7 @@
                 <a href="{{ path('qr_tv_show_manager_tvShow_add') }}" class="btn blue">Add a Tv Show</a>
             </div>
             <br />
-            <table class="bordered centered highlight responsive-table">
+            <table class="bordered centered striped responsive-table">
                 <thead>
                 <tr>
                     <th>#</th>
@@ -18,11 +18,11 @@
                     <th>Url</th>
                     <th>Year</th>
                     <th>Actions</th>
+                    <th>Episodes</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for tvShow in tvShows %}
-                    <a href="{{ path('qr_tv_show_manager_episode_read') }}/{{ tvShow.id }}">
                         <tr>
                             <td>{{ tvShow.id }}</td>
                             <td>{{ tvShow.name }}</td>
@@ -33,8 +33,9 @@
                                 <a href="{{ path('qr_tv_show_manager_tvShow_update') }}/{{ tvShow.id }}" class="btn orange"><i class="fa fa-pencil"></i></a>
                                 <a href="{{ path('qr_tv_show_manager_tvShow_delete') }}/{{ tvShow.id }}" class="btn red"><i class="fa fa-trash-o"></i></a>
                             </td>
+                            <td><a href="{{ path('qr_tv_show_manager_episode_read') }}/{{ tvShow.id }}">Episodes</a></td>
                         </tr>
-                    </a>
+
                 {% endfor %}
                 </tbody>
             </table>

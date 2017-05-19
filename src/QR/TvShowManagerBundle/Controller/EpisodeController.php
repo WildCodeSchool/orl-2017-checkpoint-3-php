@@ -2,54 +2,52 @@
 
 namespace QR\TvShowManagerBundle\Controller;
 
+use QR\TvShowManagerBundle\Entity\Episode;
 use QR\TvShowManagerBundle\Entity\TvShow;
+use QR\TvShowManagerBundle\Form\EpisodeType;
 use QR\TvShowManagerBundle\Form\TvShowType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 class EpisodeController extends Controller
 {
-    private function getTvShows()
+    public function addAction(Request $request, TvShow $tvShow)
     {
-        $em = $this->getDoctrine()->getManager();
-        return $em->getRepository('QRTvShowManagerBundle:TvShow')->findAll();
-    }
-    public function addAction(Request $request)
-    {
-        $tvShow = new TvShow();
-        $form = $this->createForm(TvShowType::class, $tvShow);
-
+        $episode = new Episode();
+        $form = $this->createForm(EpisodeType::class, $episode);
         $em = $this->getDoctrine()->getManager();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $em->persist($form->getData());
+            $data = $form->getData();
+            $data->setTvShow($tvShow);
+            $em->persist($data);
             $em->flush();
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('qr_tv_show_manager_tvShow_read');
         }
 
-        return $this->render('QRTvShowManagerBundle:TvShow:form.html.twig', ['form' => $form->createView()]);
+        return $this->render('QRTvShowManagerBundle:Episode:form.html.twig', ['form' => $form->createView()]);
     }
-    public function updateAction(TvShow $tvShow,Request $request)
+    public function updateAction(Episode $episode,Request $request)
     {
-        $form = $this->createForm(TvShowType::class, $tvShow);
+        $form = $this->createForm(EpisodeType::class, $episode);
         $em = $this->getDoctrine()->getManager();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em->flush();
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('qr_tv_show_manager_tvShow_read');
         }
 
-        return $this->render('QRTvShowManagerBundle:TvShow:form.html.twig', ['form' => $form->createView()]);
+        return $this->render('QRTvShowManagerBundle:Episode:form.html.twig', ['form' => $form->createView()]);
     }
-    public function deleteAction(TvShow $tvShow)
+    public function deleteAction(Episode $episode)
     {
         $em = $this->getDoctrine()->getManager();
-        $em->remove($tvShow);
+        $em->remove($episode);
         $em->flush();
-        return $this->redirectToRoute('homepage');
+        return $this->redirectToRoute('qr_tv_show_manager_tvShow_read');
     }
     public function readAction(TvShow $tvShow)
     {
-        return $this->render('QRTvShowManagerBundle:Episode:read.html.twig', ['tvShows' => $tvShow]);
+        return $this->render('QRTvShowManagerBundle:Episode:read.html.twig', ['tvShow' => $tvShow, 'episodes' => $tvShow->getEpisodes()]);
     }
 }

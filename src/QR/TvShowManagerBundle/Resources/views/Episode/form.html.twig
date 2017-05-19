@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+{% block title %}Add an Episode{% endblock %}
+{% block body %}
+    {% include 'QRTvShowManagerBundle::navigation.html.twig' %}
+    <div class="container">
+        <div class="row">
+            <h1 class="center">Episode</h1>
+            <br />
+            {{ form_start(form) }}
+
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name, {'attr': {'placeholder': 'Type the name of the Episode'}}) }}
+            {{ form_errors(form.name) }}
+
+            {{ form_label(form.season) }}
+            {{ form_widget(form.season, {'attr': {'placeholder': 'Type the season of the Episode'}}) }}
+            {{ form_errors(form.season) }}
+
+            {{ form_label(form.number) }}
+            {{ form_widget(form.number, {'attr': {'placeholder': 'Type the number of the Episode'}}) }}
+            {{ form_errors(form.number) }}
+
+            {{ form_label(form.note) }}
+            {{ form_widget(form.note, {'attr': {'placeholder': 'Type the note of the Episode'}}) }}
+            {{ form_errors(form.note) }}
+
+            {{ form_label(form.submit) }}
+            {{ form_widget(form.submit) }}
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock body %}

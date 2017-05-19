@@ -24,7 +24,7 @@ class TvShowController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em->persist($form->getData());
             $em->flush();
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('qr_tv_show_manager_tvShow_read');
         }
 
         return $this->render('QRTvShowManagerBundle:TvShow:form.html.twig', ['form' => $form->createView()]);
@@ -36,7 +36,7 @@ class TvShowController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em->flush();
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('qr_tv_show_manager_tvShow_read');
         }
 
         return $this->render('QRTvShowManagerBundle:TvShow:form.html.twig', ['form' => $form->createView()]);
@@ -46,7 +46,7 @@ class TvShowController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->remove($tvShow);
         $em->flush();
-        return $this->redirectToRoute('homepage');
+        return $this->redirectToRoute('qr_tv_show_manager_tvShow_read');
     }
     public function readAction()
     {

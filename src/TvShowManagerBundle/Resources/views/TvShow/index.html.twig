@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Tv Show
+{% endblock %}
+
+{% block pagetitle %}
+    <h1>Gestion des show TV</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <a class="btn btn-default" href="/tvshow/new">Créer une nouvelle série</a>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <th>Action</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Image</th>
+            <th>Year</th>
+        </thead>
+
+        {% for serie in series %}
+            <tr>
+                <td>
+                    <a href="/tvshow/edit/{{ serie.id }}" title="Edit"><span class="glyphicon glyphicon-wrench"></span></a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a href="/tvshow/delete/{{ serie.id }}" title="Delete"><span class="glyphicon glyphicon-trash"></span></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="/tvshow/view/{{ serie.id }}" title="View"><span class="glyphicon glyphicon-fullscreen"></span></a>
+                </td>
+                <td>{{ serie.name }}</td>
+                <td>{{ serie.type }}</td>
+                <td><img class="smallimg" src="{{ serie.url }}" /></td>
+                <td>{{ serie.year }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}

@@ -11,7 +11,8 @@ class AlgoController extends Controller
     //////////////////////////////////////
     //
 
-    public function dateInterval ($series) {
+    public function dateInterval ($series)
+    {
 
     }
 

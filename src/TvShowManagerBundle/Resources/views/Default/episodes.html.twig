@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container-fluid">
+    <div class="table table-hover">
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Saison</th>
+                <th>Numéro de saison</th>
+                <th>Note</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for episode in episodes %}
+                <tr>
+                    <td>{{ episode.id }}</td>
+                    <td>{{ episode.name }}</td>
+                    <td>{{ episode.season }}</td>
+                    <td>{{ episode.number }}</td>
+                    <td>{{ episode.note}}</td>
+                    <td>
+                        <a href="#"class="btn btn-default">show</a>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+    </div>
+
+    {% endblock %}

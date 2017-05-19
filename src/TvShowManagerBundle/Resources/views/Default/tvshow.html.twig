@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container-fluid">
+    <div class="table table-hover">
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>année</th>
+                <th>type</th>
+                <th>image</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for tvshow in tvshows %}
+                <tr>
+                    <td>{{ tvshow.id }}</td>
+                    <td>{{ tvshow.name }}</td>
+                    <td>{{ tvshow.year }}</td>
+                    <td>{{ tvshow.type }}</td>
+
+                    <td><img src="{{ tvshow.url }}" style="width: 100" height="100"></td>
+                    <td>
+                        <a href="#"class="btn btn-default">Delete</a>
+                        <a href="#"class="btn btn-default">Add</a>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+    </div>
+
+    {% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container text-center">
+        <h1>Toutes nos excellentes séries !</h1>
+        <hr/>
+        <a href="/addTvShow" class="btn btn-default" style="margin-bottom: 30px">Ajouter une série !</a>
+        <div class="row">
+            {% for serie in series %}
+                <a href="/episode/{{ serie.id }}">
+                    <div class="thumbnail col-xs-4">
+                        <h2 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ serie.name }}</h2>
+                        <p><em>{{ serie.type }}</em></p>
+                        <p>- {{ serie.year }} -</p>
+                        <img src="{{ serie.url }}">
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

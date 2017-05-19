@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container text-center">
+        <h1>Toutes les épisodes de {{ serie.name }} !</h1>
+        <hr/>
+        <a href="/tvshow" class="btn btn-default" style="margin-bottom: 30px">Retour aux séries</a>
+        <a href="/editTvShow/{{ serie.id }}" class="btn btn-default" style="margin-bottom: 30px">Administrer cette série
+            !</a>
+        <div class="row">
+            {% for episode in episodes %}
+                <div class="thumbnail col-xs-4">
+                    <h2 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ episode.name }}</h2>
+                    <p>Saison {{ episode.season }}</em></p>
+                    <p>Episode {{ episode.number }}</p>
+                    <img src="{{ serie.url }}">
+                    <a href="/editEpisode/{{ episode.id }}" class="btn btn-default" style="margin: 20px 0 10px 0">Administrer
+                        cet épisode !</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

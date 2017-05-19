@@ -1,0 +1,4 @@
+services:
+#    checkpoint_tv_show_manager.example:
+#        class: checkpoint\TvShowManagerBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

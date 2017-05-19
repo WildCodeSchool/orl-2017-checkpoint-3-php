@@ -25,7 +25,7 @@ class DefaultController extends Controller
         return $this->render('TvShowManagerBundle:tvshow:add.html.twig');
     }
     /**
-     * @Route("/tvshow/delete/{id}")
+     * @Route("/tvshow/delete/{id}", name="delete")
      */
     public function tvshowDeleteAction($id)
     {
@@ -35,7 +35,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->remove($tvShowList);
         $em->flush();
-        return $this->redirectToRoute('/tvshow');
+        //return $this->redirectToRoute('/tvshow');
     }
     /**
      * @Route("/tvshow/edit/{id}")

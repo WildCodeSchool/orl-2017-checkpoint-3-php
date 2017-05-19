@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}TvShow WildCodeSchool{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
         {% endblock %}
@@ -10,7 +10,18 @@
 
     </head>
     <body>
-        {% block body %}{% endblock %}
+    <div class="navbar">
+        <a class="navbar-brand" href="#">Super Séries</a>
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="{{ path('tvshow_list') }}">Séries</a>
+            </li>
+            <li>
+                <a href="#">Episodes</a>
+            </li>
+        </ul>
+    </div>
+    {% block body %}{% endblock %}
         {% block javascripts %}
             <script src="{{ asset('js/jquery.js') }}"></script>
             <script src="{{ asset('js/bootstrap.min.js') }}"></script>

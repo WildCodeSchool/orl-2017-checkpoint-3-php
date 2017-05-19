@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block headtitle %} Liste des Tv Shows {% endblock %}
+
+{% block body %}
+
+<div class="row">
+
+    <div class="col-xs-12 col-md-offset-3 col-md-6">
+
+        <h1 class="text-center">Tous vos Tv Shows préférés</h1>
+
+        {% for tvshow in tvshows %}
+
+            {#<tr>
+                <td><a href="{{ path('ficheTVS', { 'id': tvshow.id }) }}">{{ flight.id }}</a></td>
+                <td>{{ flight.departure }}</td>
+                <td>{{ flight.arrival }}</td>
+                <td>{{ flight.plane }}</td>
+                <td>{{ flight.pilot }}</td>
+                <td>{{ flight.freeSeats }}</td>
+                <td>{% if flight.takeofTime %}{{ flight.takeofTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('ficheTVS', { 'id': tvshow.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('modifTVS', { 'id': tvshow.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>#}
+
+            <ul>
+                <li><span><a href="{{ path('ficheTVS', { 'id': tvshow.id }) }}">{{ tvshow.name }}</a></span> - {{ tvshow.type }}
+                    - {{ tvshow.year }} - {{ tvshow.url }} - <span><a href="{{ path('suppressionTVS', { 'id': tvshow.id }) }}">supprimer</a></span> </li>
+            </ul>
+
+        {% endfor %}
+
+        <button class="btn btn-primary" href="{{ path('ajoutTVS') }}" >Ajouter un TV Show</button>
+
+    </div>
+
+</div>
+
+{% endblock %}

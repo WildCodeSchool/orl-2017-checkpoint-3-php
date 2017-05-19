@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Liste série{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+
+</head>
+<body>
+{% block body %}
+<div class="container-fluid">
+    <h1>Liste des series</h1>
+    {% for serie in series %}
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="{{ serie.url }}" alt="{{ serie.name }}">
+                <div class="caption">
+                    <h3>{{ serie.name }}</h3>
+                    <p>Année : {{ serie.year }}</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default"
+                                                                                       role="button">Button</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        {% endfor %}
+    </div>
+    {% endblock %}
+    {% block javascripts %}
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    {% endblock %}
+</body>
+</html>

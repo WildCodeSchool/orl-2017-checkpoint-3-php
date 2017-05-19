@@ -12,7 +12,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('SubjectBundle:Default:index.html.twig');
+        return $this->render('SubjectBundle:Default:episode.html.twig');
     }
 
     /**

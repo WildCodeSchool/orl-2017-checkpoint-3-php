@@ -101,49 +101,47 @@
     <div class="nk-main">
 
 
-
-
         <div class="container">
-            <!-- START: Filter -->
-            <div class="nk-pagination nk-pagination-nobg nk-pagination-center">
-                <a href="#nk-toggle-filter">
-                    <span class="nk-icon-squares"></span>
-                </a>
-            </div>
-            <ul class="nk-isotope-filter">
-                <li class="active" data-filter="*">All</li>
-                <li data-filter="Branding">Branding</li>
-                <li data-filter="Print">Print</li>
-                <li data-filter="Photography">Photography</li>
-                <li data-filter="Design">Design</li>
-                <li data-filter="Mockup">Mockup</li>
-            </ul>
-            <!-- END: Filter -->
+            <div class="nk-portfolio-single">
 
-            <div class="nk-portfolio-list nk-isotope nk-isotope-3-cols">
+                <div class="nk-gap-4 mb-14"></div>
+                <h1 class="nk-portfolio-title display-4">{{ serie.name }}</h1>
+                <div class="row vertical-gap">
 
-                {% for serie in series %}
-                <div class="nk-isotope-item" data-filter="Mockup">
-                    <div class="nk-portfolio-item nk-portfolio-item-square nk-portfolio-item-info-style-1">
-                        <a href="{{ path ('tvShowList', {'id':'id-value'}) }}" class="nk-portfolio-item-link"></a>
-                        <div class="nk-portfolio-item-image">
-                            <div style="background-image: url({{ serie.url }});"></div>
-                        </div>
-                        <div class="nk-portfolio-item-info nk-portfolio-item-info-center text-xs-center">
-                            <div>
-                                <h2 class="portfolio-item-title h3">{{ serie.name }}</h2>
-                                <div class="portfolio-item-category">{{ serie.type }}</div>
-                            </div>
-                        </div>
+                    <div class="col-lg-4">
+                        <table class="nk-portfolio-details">
+                            <tr>
+                                <td>
+                                    <strong>Name:</strong>
+                                </td>
+                                <td>{{ serie.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Year:</strong>
+                                </td>
+                                <td>{{ serie.year }}</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>Share:</strong>
+                                </td>
+                                <td>
+                                    <a href="#" title="Share page on Facebook" data-share="facebook">Facebook</a>,
+                                    <a href="#" title="Share page on Twitter" data-share="twitter">Twitter</a>,
+                                    <a href="#" title="Share page on Pinterest" data-share="pinterest">Pinterest</a>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-
-                {% endfor %}
+                <div class="nk-gap-4 mt-14"></div>
 
             </div>
-
-            <div class="nk-gap-4"></div>
         </div>
+
+
 
 
         <!--

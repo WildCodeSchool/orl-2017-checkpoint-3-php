@@ -1,0 +1,27 @@
+qr_tv_show_manager_tvShow_read:
+    path:     /
+    defaults: { _controller: QRTvShowManagerBundle:TvShow:read }
+qr_tv_show_manager_tvShow_add:
+    path:     /tvShow/add
+    defaults: { _controller: QRTvShowManagerBundle:TvShow:add }
+qr_tv_show_manager_tvShow_update:
+    path:     /tvShow/update/{id}
+    defaults:
+        _controller: QRTvShowManagerBundle:TvShow:update
+        id:      1
+    requirements:
+        id:   \d+
+qr_tv_show_manager_tvShow_delete:
+    path:     /tvShow/delete/{id}
+    defaults:
+        _controller: QRTvShowManagerBundle:TvShow:delete
+        id:      1
+    requirements:
+        id:   \d+
+qr_tv_show_manager_episode_read:
+    path:     /episode/{id}
+    defaults:
+        _controller: QRTvShowManagerBundle:Episode:read
+        id:      1
+    requirements:
+        id:   \d+

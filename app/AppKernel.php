@@ -16,6 +16,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new SubjectBundle\SubjectBundle(),
+            new QR\TvShowManagerBundle\QRTvShowManagerBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

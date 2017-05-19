@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+{% block title %}Add a Tv Show{% endblock %}
+{% block body %}
+    {% include 'QRTvShowManagerBundle:TvShow:navigation.html.twig' %}
+    <div class="container">
+        <div class="row">
+            <h1 class="center">Add a Tv Show</h1>
+            <br />
+            {{ form_start(form) }}
+
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name, {'attr': {'placeholder': 'Type the name of the Show'}}) }}
+            {{ form_errors(form.name) }}
+
+            {{ form_label(form.type) }}
+            {{ form_widget(form.type, {'attr': {'placeholder': 'Type the type of the Show'}}) }}
+            {{ form_errors(form.type) }}
+
+            {{ form_label(form.url) }}
+            {{ form_widget(form.url, {'attr': {'placeholder': 'Type the url of the Show'}}) }}
+            {{ form_errors(form.url) }}
+
+            {{ form_label(form.year) }}
+            {{ form_widget(form.year, {'attr': {'placeholder': 'Type the year of the Show'}}) }}
+            {{ form_errors(form.year) }}
+
+            {{ form_label(form.submit) }}
+            {{ form_widget(form.submit) }}
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock body %}

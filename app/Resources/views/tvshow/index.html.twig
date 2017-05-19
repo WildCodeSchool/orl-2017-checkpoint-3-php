@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>TV Show list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>url</th>
+                <th>year</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tvshow in tvshows %}
+            <tr>
+                <td><a href="{{ path('tvshow_show', { 'id': tvshow.id }) }}">{{ tvshow.id }}</a></td>
+                <td>{{ tvshow.name }}</td>
+                <td>{{ tvshow.type}}</td>
+                <td>{{ tvshow.url}}</td>
+                <td>{{ tvshow.year }}</td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tvshow_show', { 'id': tvshow.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tvshow_edit', { 'id': tvshow.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tvshow_new') }}">Create a new Tv Show</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,27 @@
+TvShow\ManagerBundle\Entity\Episode:
+    type: entity
+    table: null
+    repositoryClass: TvShow\ManagerBundle\Repository\EpisodeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        season:
+            type: integer
+        number:
+            type: integer
+        note:
+            type: integer
+    lifecycleCallbacks: {  }
+
+
+
+    manyToOne:
+        tvShow:
+            targetEntity: TvShow\ManagerBundle\Entity\TvShow

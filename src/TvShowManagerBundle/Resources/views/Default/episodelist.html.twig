@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <h1>Liste des épisodes</h1>
+
+      {{ dump(episodes) }}
+    {{ dump(tvshow) }}
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Season</th>
+            <th>Number</th>
+            <th>Note</th>
+            <th>TvShow</th>
+        </tr>
+        </thead>
+        <tbody>
+
+
+                 {% for episode in episodes %}
+                <tr>
+                    <td>{{ episode.id }}</td>
+                    <td>{{ episode.name }}</td>
+                    <td>{{ episode.season }}</td>
+                    <td>{{ episode.number }}</td>
+                    <td>{{ episode.note }}</td>
+                    <td>{{ episode.tvshow.name }}</td>
+                    <td><ul>
+                            <li>
+                                <a href="{{ path('episode_edit', { 'id': episode.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('episode_new') }}">Créer un nouvel épisode</a>
+        </li>
+    </ul>
+{% endblock %}

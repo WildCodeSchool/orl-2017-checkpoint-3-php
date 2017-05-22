@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <h1>Liste des épisodes</h1>
+
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-6">
+
+        <h2>{{ tvshow.name }}</h2>
+
+            <table class="table table-condensed table-hover">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>season</th>
+                    <th>number</th>
+                    <th>note</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for episode in episodes %}
+                <tr>
+                    <td>{{ episode.id }}</td>
+                    <td>{{ episode.name }}</td>
+                    <td>{{ episode.season }}</td>
+                    <td>{{ episode.number }}</td>
+                    <td>{{ episode.note }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            {{ dump(episodes) }}
+            {{ dump(tvshow) }}
+
+        </div>
+    </div>
+
+
+{% endblock %}

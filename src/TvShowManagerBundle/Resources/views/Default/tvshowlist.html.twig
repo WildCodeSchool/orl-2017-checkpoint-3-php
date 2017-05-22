@@ -1,36 +1,53 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 
-    <h1>Liste des séries</h1>
 
-    <table>
+
+    <div class="row">
+
+        <div class="col-xs-offset-1 col-xs-6">
+
+            <h1>Liste des séries</h1>
+
+    <table class="table table-bordered table-hover">
         <thead>
         <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>type</th>
-            <th>image</th>
-            <th>year</th>
+            <th width="50px">Id</th>
+            <th width="400px">Name</th>
+            <th width="100px">type</th>
+            <th width="300px">image</th>
+            <th width="100px">year</th>
+
         </tr>
         </thead>
         <tbody>
-        {% for tvshow in tvshows %}
-            <tr>
-                <td>{{ tvshow.name }}</td>
-                <td>{{ tvshow.type }}</td>
-                <td><img src="{{ tvshow.url }}" width="300px" alt="image"/></td>
-                <td>{{ tvshow.year }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('tvshow_edit', { 'id': tvshow.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
+    {% for tvshow in tvshows %}
+        <tr>
+            <td>{{ tvshow.id }}</td>
+            <td>{{ tvshow.name }}</td>
+            <td>{{ tvshow.type }}</td>
+            <td><img src="{{ tvshow.url }}" width="300px" alt="image"/></td>
+            <td>{{ tvshow.year }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('tvshow_edit', { 'id': tvshow.id }) }}">edit</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('tvshow_delete', { 'id': tvshow.id }) }}">delete</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('episode_tvshow_list', { 'id': tvshow.id }) }}">episodes</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
         {% endfor %}
         </tbody>
     </table>
+
+        </div>
+    </div>
 
     <ul>
         <li>

@@ -1,0 +1,4 @@
+services:
+#    tv_show_manager.example:
+#        class: TvShowManagerBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

@@ -1,0 +1,24 @@
+{% extends "::layout.html.twig" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for tvshow in tvshows %}
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <img src="{{ tvshow.url }}" alt="...">
+                        <div class="caption">
+                            <h3>{{ tvshow.name }}</h3>
+                            <p>{{ tvshow.type }}</p>
+                            <p><a href="" class="btn btn-primary" role="button">Ajouter</a>
+                            <p><a href="" class="btn btn-primary" role="button">Modifier</a>
+                            {#<p><a href="/tvshow/deleteshow/{{ tvshow.id }}" class="btn btn-primary" role="button">Supprimer</a>#}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -12,7 +12,17 @@ class AlgoController extends Controller
     //
 
     public function dateInterval ($series) {
+        ksort($series);
+        foreach ($series as $date=>$serie) {
 
+            if (isset($previousDate)) {
+                $interval[] = $date - $previousDate;
+            }
+
+            $previousDate = $date;
+
+        }
+        return max($interval);
     }
 
 }

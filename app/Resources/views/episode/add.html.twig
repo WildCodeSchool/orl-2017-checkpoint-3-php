@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1>Add a new Episode</h1>
+
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <div class="form-group">
+                <input class="btn btn-success form-control" type="submit" name="add" value="ADD"/>
+            </div>
+            {{ form_end(form) }}
+    </div>
+    <hr/>
+    <a class="btn btn-primary" href="{{ path('list_episode') }}">Back</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Note</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for tvShow in tvShowNote %}
+            <tr>
+                <td>{{ tvShow.name }}</td>
+                <td>{{ tvShow.averageNote }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

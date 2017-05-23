@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container-fluid">
+<h1>{{ tvShow.name }} <span class="label label-info">{{ tvShow.year }}</span></h1>
+   <img src="{{ tvShow.url }}" class="img-responsive" alt="{{ tvShow.name }}" />
+    <p>{{ tvShow.type }}</p>
+
+    <ul>
+    {% for episode in tvShow.episodes %}
+        <li>S{{ episode.season }}E{{ episode.number }} {{ episode.name }} <a class="btn btn-info" href="{{ path('edit_episode', {'id':episode.id}) }}">Edit</a></li>
+    {% else %}
+        No episode.
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

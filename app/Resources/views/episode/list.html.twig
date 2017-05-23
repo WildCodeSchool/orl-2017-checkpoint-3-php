@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1>Tv Show list</h1>
+        <div class="row">
+            <a href="{{ path('add_episode') }}" class="btn btn-primary">Add tv show</a>
+        </div>
+
+<table class="table table-hover">*
+            {% for episode in episodes %}
+            {% endfor %}
+</table>
+
+{% endblock %}

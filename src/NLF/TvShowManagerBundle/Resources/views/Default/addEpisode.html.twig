@@ -1,0 +1,31 @@
+{% form_theme formepisode 'bootstrap_3_layout.html.twig' %}
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="col-xs-6">
+    {{ form(formepisode) }}
+</div>
+
+
+<div class="allEpisode">
+    <table class="table">
+        {% for all in allepisode %}
+        <tr><td>{{ all.name }}</td><td>{{ all.season }}</td><td>{{ all.number }}</td><td>{{ all.note }}</td><td><a href="{{ path('nlf_tv_show_manager_delete_episode', { 'id': all.id }) }}">delete</a></td><td><a href="{{ path('nlf_tv_show_manager_edit_episode', { 'id': all.id }) }}">edit</a></td></tr>
+        {% endfor %}
+    </table>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

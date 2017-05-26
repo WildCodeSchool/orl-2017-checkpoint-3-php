@@ -1,0 +1,27 @@
+nlf_tv_show_manager_homepage:
+    path:     /
+    defaults: { _controller: NLFTvShowManagerBundle:Default:index }
+
+nlf_tv_show_manager_add_episode:
+    path:     /episode
+    defaults: { _controller: NLFTvShowManagerBundle:Episode:add }
+
+nlf_tv_show_manager_delete_episode:
+    path:     /episode/delete/{id}
+    defaults: { _controller: NLFTvShowManagerBundle:Episode:delete }
+
+nlf_tv_show_manager_edit_episode:
+    path:     /episode/edit/{id}
+    defaults: { _controller: NLFTvShowManagerBundle:Episode:add }
+
+nlf_tv_show_manager_add_tvshow:
+    path:     /tvshow
+    defaults: { _controller: NLFTvShowManagerBundle:TvShow:add }
+
+nlf_tv_show_manager_delete_tvshow:
+    path:     /tvshow/delete/{id}
+    defaults: { _controller: NLFTvShowManagerBundle:TvShow:delete }
+
+nlf_tv_show_manager_edit_tvshow:
+    path:     /tvshow/edit/{id}
+    defaults: { _controller: NLFTvShowManagerBundle:TvShow:add }
